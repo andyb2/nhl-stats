@@ -1,29 +1,49 @@
+import { connect } from "react-redux";
+import { useEffect } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import Navbar from "../Navbar/Navbar"
-import Standings from "../Standings/Standings";
 import WStandings from "../../Widgets/WStandings/WStandings";
 import "./Landing.css"
-import { useEffect } from "react";
+import { nhlDataFetch } from "../../store/thunkCreators";
 
-const Landing = () => {
+const Landing = (props) => {
+
+    const retrieveNhlData = async () => {
+        // const nhlStandingsData =  await axios.get('https://statsapi.web.nhl.com/api/v1/standings')
+        await props.nhlDataFetch()
+    }
+
+    useEffect(() => {
+        retrieveNhlData()
+    }, [])
     return (
         <>
             <div className="container">
                 <Navbar />
                 <Sidebar />
                 <div className="viewPort">
-                    {/* <Standings /> */}
-                    <WStandings />
-                    <WStandings />
-                    <WStandings />
                     <WStandings />
                     {/* <WStandings />
+                    <WStandings />
                     <WStandings /> */}
-
                 </div>
             </div>
         </>
     )
 }
 
-export default Landing
+const mapDispatchToProps = (dispatch) => {
+    return {
+        nhlDataFetch: () => {
+            dispatch(nhlDataFetch())
+        }
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        state
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Landing)
