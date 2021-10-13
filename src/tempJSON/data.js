@@ -1,0 +1,507 @@
+const Sample = {
+    data: {
+        records: [
+            {
+                division: {
+                    id: 27,
+                    link: "/api/v1/divisions/27",
+                    name: "Honda West",
+                },
+                teamRecords: [
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 54,
+                            link: "/api/v1/teams/54",
+                            name: "Vegas Golden Knights",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    }
+
+                ]
+
+            },
+            {
+                division: {
+                    id: 27,
+                    link: "/api/v1/divisions/27",
+                    name: "Discover Central",
+                },
+                teamRecords: [
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    },
+                    {
+                        clinchIndicator: "p",
+                        conferenceHomeRank: "0",
+                        conferenceL10Rank: "0",
+                        conferenceRank: "0",
+                        conferenceRoadRank: "0",
+                        divisionHomeRank: "1",
+                        divisionL10Rank: "1",
+                        divisionRank: "1",
+                        divisionRoadRank: "2",
+                        gamesPlayed: 56,
+                        goalsAgainst: 133,
+                        goalsScored: 197,
+                        lastUpdated: "2021-07-08T10:37:40Z",
+                        leagueHomeRank: "1",
+                        leagueL10Rank: "1",
+                        leagueRank: "1",
+                        team: {
+                            id: 21,
+                            link: "/api/v1/teams/21",
+                            name: "Colorado Avalanche",
+                        },
+                        leagueRecord: {
+                            losses: 13,
+                            ot: 4,
+                            type: "league",
+                            wins: 39,
+                        }
+
+                    }
+
+                ]
+
+            }
+        ]
+    }
+}
+export default Sample

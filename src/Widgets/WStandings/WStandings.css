@@ -1,0 +1,66 @@
+.standingsWidget {
+  width: 25%;
+  max-width: 25%;
+  height: 50%;
+  padding: 0.25rem;
+}
+
+.WstandingsTable {
+  border-collapse: collapse;
+}
+
+.widgetHeader {
+  /* height: 10%; */
+  border: 1px solid black;
+  color: rgb(185, 185, 185);
+  background: rgb(15, 19, 34);
+  /* padding: 1rem; */
+  padding-left: 1rem;
+}
+
+.widget {
+  display: flex;
+  justify-content: center;
+  border: 1px solid grey;
+  padding: 1rem;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+}
+
+.WStandingsHeader {
+  background-color: black;
+  color: rgb(197, 197, 197);
+}
+
+.WteamCard {
+  border: 1px solid rgb(0, 0, 0);
+  /* background-color: black; */
+}
+
+.widget:hover {
+  overflow: overlay;
+  overflow-x: hidden;
+  border: 1px solid rgb(209, 209, 209);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px 10px 10px 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
