@@ -4,18 +4,7 @@ import './Standings.css'
 import Sample from '../../tempJSON/data'
 const Standings = () => {
     const [standings, setStandings] = useState(Sample)
-    const [test, setTest] = useState()
 
-    // const standingRequest = async () => {
-    //     const standingsApiRequest = await axios.get('https://statsapi.web.nhl.com/api/v1/standings');
-    //     // setStandings(standingsApiRequest)
-    //     setTest(standingsApiRequest)
-    // }
-    // console.log(test)
-    // useEffect(() => {
-    //     standingRequest()
-    // }, [])
-    // console.log(Sample)
     return (
         <div className="standingsComp">
             <h1>{standings.data.records[0].division.name}</h1>
