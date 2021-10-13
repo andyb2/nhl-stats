@@ -3,14 +3,14 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-    const [toggleStats, setTottleStats] = useState(false)
+    // const [toggleStats, setTottleStats] = useState(false)
 
-    const standings = () => {
-        console.log('standings')
-    }
-    const stats = () => {
-        console.log('stats')
-    }
+    // const standings = () => {
+    //     console.log('standings')
+    // }
+    // const stats = () => {
+    //     console.log('stats')
+    // }
     return (
         <nav className="navbar">
             <div className="nav-links">
