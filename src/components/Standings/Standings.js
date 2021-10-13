@@ -15,7 +15,7 @@ const Standings = () => {
     // useEffect(() => {
     //     standingRequest()
     // }, [])
-    console.log(Sample)
+    // console.log(Sample)
     return (
         <div className="standingsComp">
             <h1>{standings.data.records[0].division.name}</h1>
