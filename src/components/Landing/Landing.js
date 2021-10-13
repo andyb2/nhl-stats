@@ -9,7 +9,6 @@ import { nhlDataFetch } from "../../store/thunkCreators";
 const Landing = (props) => {
 
     const retrieveNhlData = async () => {
-        // const nhlStandingsData =  await axios.get('https://statsapi.web.nhl.com/api/v1/standings')
         await props.nhlDataFetch()
     }
 
@@ -22,10 +21,7 @@ const Landing = (props) => {
                 <Navbar />
                 <Sidebar />
                 <div className="viewPort">
-                    <WStandings />
-                    {/* <WStandings />
-                    <WStandings />
-                    <WStandings /> */}
+                    {props.state.standings ? <WStandings standings={props.state.standings} /> : null}
                 </div>
             </div>
         </>
