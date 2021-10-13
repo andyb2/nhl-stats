@@ -5,6 +5,18 @@
   padding: 0.25rem;
 }
 
+.widget {
+  display: flex;
+  flex: wrap;
+  flex-direction: column;
+  /* justify-content: center; */
+  border: 1px solid grey;
+  /* padding: 1rem; */
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+}
+
 .WstandingsTable {
   border-collapse: collapse;
 }
@@ -17,25 +29,18 @@
   /* padding: 1rem; */
   padding-left: 1rem;
 }
-
-.widget {
-  display: flex;
-  justify-content: center;
-  border: 1px solid grey;
-  padding: 1rem;
-  width: 100%;
-  height: 90%;
-  overflow: hidden;
+td {
+  padding: 0.1rem;
 }
 
 .WStandingsHeader {
   background-color: black;
+  border: 1px solid black;
   color: rgb(197, 197, 197);
 }
 
 .WteamCard {
   border: 1px solid rgb(0, 0, 0);
-  /* background-color: black; */
 }
 
 .widget:hover {
