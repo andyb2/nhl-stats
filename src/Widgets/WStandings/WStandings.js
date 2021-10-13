@@ -1,15 +1,10 @@
-import { Link, Route } from "react-router-dom"
-import Standings from "../../components/Standings/Standings"
+import { connect } from 'react-redux'
 import './WStandings.css'
 import Sample from '../../tempJSON/data'
 
-const WStandings = () => {
+const WStandings = (props) => {
 
-    // const renderStandingsComponent = () => {
-    //     return (<Link to='/Standings' component={Standings} />)
-
-    // }
-    console.log(Sample)
+    console.log(props)
     return (
         <div className="standingsWidget">
             <h1 className="widgetHeader">Standings</h1>
@@ -37,4 +32,5 @@ const WStandings = () => {
         </div>
     )
 }
+
 export default WStandings
