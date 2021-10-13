@@ -2,6 +2,11 @@ import { createStore, applyMiddleware } from "redux";
 import thunkMiddleware from "redux-thunk";
 import actions from './actions'
 
-const initialState = {}
+const renderedComponents = {
+    activeComponent: {
+        WStandings: true,
+        Standings: false,
+    }
+}
 
-export default createStore(actions, initialState, applyMiddleware(thunkMiddleware));
+export default createStore(actions, renderedComponents, applyMiddleware(thunkMiddleware));
