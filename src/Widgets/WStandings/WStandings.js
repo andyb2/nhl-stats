@@ -3,6 +3,7 @@ import './WStandings.css'
 // import Sample from '../../tempJSON/data'
 import { toggleComponents } from '../../store/actions'
 import { useState } from 'react'
+import Standings from '../../components/Standings/Standings'
 
 const WStandings = (props) => {
 
@@ -15,10 +16,11 @@ const WStandings = (props) => {
     // Component render toggle
     const { activeComponent } = props
     const { WStandings } = activeComponent
+    const { Standings } = activeComponent
     console.log(`my props`, activeComponent)
 
     const renderFullStats = () => {
-        props.toggleComponents({ WStandings: !WStandings })
+        props.toggleComponents({ WStandings: !WStandings, Standings: !Standings })
     }
 
     return (
