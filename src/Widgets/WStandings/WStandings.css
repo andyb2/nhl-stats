@@ -1,6 +1,7 @@
 .standingsWidget {
   width: 25%;
   max-width: 25%;
+  min-width: 15%;
   height: 50%;
   padding: 0.25rem;
 }
