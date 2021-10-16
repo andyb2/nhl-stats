@@ -1,70 +1,49 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react';
-import './Standings.css'
-import Sample from '../../tempJSON/data'
-const Standings = () => {
-    const [standings, setStandings] = useState(Sample)
+import './Standings.css';
+
+const Standings = (props) => {
+    const { standings } = props
+    const { data } = standings
+    const { records } = data
+    console.log(`PROPS`, props.standings.data)
 
     return (
         <div className="standingsComp">
-            <h1>{standings.data.records[0].division.name}</h1>
-            <table className="standingsTable">
-                <thead className="tableHeader">
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>GP</th>
-                        <th>Wins</th>
-                        <th>Losses</th>
-                        <th>Points</th>
-                    </tr>
-                </thead>
-                {standings &&
-                    standings.data.records[0].teamRecords.map((stats, idx) => {
-                        return (
-                            <tbody className="teamCard" key={idx}>
-                                <tr className="standingsTableRow" key={idx}>
-                                    <td>{idx + 1}</td>
-                                    <td className="teamNameStyle">{stats.team.name}</td>
-                                    <td>{stats.gamesPlayed}</td>
-                                    <td>{stats.leagueRecord.wins}</td>
-                                    <td>{stats.leagueRecord.losses}</td>
-                                    <td>{stats.points}</td>
-                                </tr>
-                            </tbody>
-                        )
-                    })
-                }
-            </table>
-            <h1>{standings.data.records[1].division.name}</h1>
-            <table className="standingsTable">
-                <thead className="tableHeader">
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>GP</th>
-                        <th>Wins</th>
-                        <th>Losses</th>
-                        <th>Points</th>
-                    </tr>
-                </thead>
-                {standings &&
-                    standings.data.records[1].teamRecords.map((stats, idx) => {
-                        return (
-                            <tbody className="teamCard" key={idx}>
-                                <tr className="standingsTableRow" key={idx}>
-                                    <td>{idx + 1}</td>
-                                    <td className="teamNameStyle">{stats.team.name}</td>
-                                    <td>{stats.gamesPlayed}</td>
-                                    <td>{stats.leagueRecord.wins}</td>
-                                    <td>{stats.leagueRecord.losses}</td>
-                                    <td>{stats.points}</td>
-                                </tr>
-                            </tbody>
-                        )
-                    })
-                }
-            </table>
+            {records.map((teamData, idx) => {
+                return (
+                    // <div>
+                    <table className="standingsTable" key={idx}>
+                        <thead className="tableHeader">
+                            <tr>
+                                <th></th>
+                                <th>{teamData.division.name}</th>
+                                <th>GP</th>
+                                <th>W</th>
+                                <th>L</th>
+                                <th>OT</th>
+                                <th>P</th>
+                            </tr>
+                        </thead>
+                        {standings &&
+                            teamData.teamRecords.map((stats, idx) => {
+                                return (
+                                    <tbody className="teamCard" key={idx}>
+                                        <tr className="standingsTableRow" key={idx}>
+                                            <td>{idx + 1}</td>
+                                            <td className="teamNameStyle">{stats.team.name}</td>
+                                            <td>{stats.gamesPlayed}</td>
+                                            <td>{stats.leagueRecord.wins}</td>
+                                            <td>{stats.leagueRecord.losses}</td>
+                                            <td>{stats.leagueRecord.ot}</td>
+                                            <td>{stats.points}</td>
+                                        </tr>
+                                    </tbody>
+                                )
+                            })
+                        }
+                    </table>
+                    // </div>
+                )
+            })}
         </div>
     )
 }
