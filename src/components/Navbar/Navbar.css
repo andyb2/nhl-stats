@@ -4,6 +4,7 @@
   flex-direction: row;
   justify-content: flex-end;
   width: 100vw;
+  /* height: 5vh; */
   top: 0;
   color: rgb(206, 206, 206);
   gap: 1em;
