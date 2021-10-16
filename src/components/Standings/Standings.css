@@ -2,16 +2,15 @@
   display: flex;
   flex: wrap;
   flex-direction: column;
-  width: 100%;
-  padding-top: 0.1rem;
+  padding-top: 0.5rem;
   padding-left: 0.5rem;
 }
 
 .standingsTable {
+  min-width: 25%;
+  /* max-width: 5%; */
   border-collapse: collapse;
-  /* width: 100%; */
   border: 1px solid grey;
-  padding: 10px;
 }
 
 .teamCard {
@@ -21,11 +20,8 @@
 }
 
 .teamCard td {
-  padding: 0.5rem;
-  /* overflow: hidden;
-  text-overflow: ellipsis; */
-  /* width: 10%; */
-  white-space: nowrap;
+  padding: 0.1rem;
+  /* white-space: nowrap; */
 }
 
 .tableHeader th {
