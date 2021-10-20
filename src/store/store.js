@@ -6,6 +6,7 @@ const renderedComponents = {
     activeComponent: {
         WStandings: true,
         Standings: false,
+        Teams: false,
     }
 }
 
