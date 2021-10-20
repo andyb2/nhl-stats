@@ -2,41 +2,26 @@ import axios from 'axios'
 import './Sidebar.css'
 import { useEffect, useState } from 'react'
 import Team from '../Team/Team'
+import { toggleComponents } from '../../store/actions'
+import { connect } from 'react-redux'
 
-const Sidebar = () => {
+const Sidebar = (props) => {
 
-    const [nhlTeams, setNhlteams] = useState([])
-    const [toggleTeam, setToggleTeam] = useState(false)
+    // const { teams } = props.state;
+    const { activeComponent } = props.state;
+    const { Teams } = activeComponent
 
-    const apiReq = async () => {
-        const nhlTeamsRequest = await axios.get(`https://statsapi.web.nhl.com/api/v1/teams`)
-        const alphaTeams = [...nhlTeamsRequest.data.teams].sort((a, b) => {
-            if (a.name < b.name)
-                return -1;
-            if (a.name > b.name)
-                return 1;
-            return 0;
-        });
-        setNhlteams(alphaTeams);
-    }
 
-    const handleTeamClick = (teamName) => {
+    const handleTeamClick = async (teamName) => {
         console.log(teamName)
-        setToggleTeam(prev => !prev)
-        if (toggleTeam) {
-            return <Team />
-        }
-        // setToggleTeam(prev => !prev)
-    }
+        await props.toggleComponents({ Teams: !Teams });
 
-    useEffect(() => {
-        apiReq();
-    }, [])
+    }
 
     return (
         <div className="sidebar">
-            {nhlTeams &&
-                nhlTeams.map((nhlTeam, idx) => {
+            {props.state.teams &&
+                props.state.teams.map((nhlTeam, idx) => {
                     return (
                         <div
                             className="teamName"
@@ -51,4 +36,13 @@ const Sidebar = () => {
         </div>
     )
 }
-export default Sidebar
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        toggleComponents: (teams) => {
+            dispatch(toggleComponents(teams))
+        }
+    }
+}
+export default connect(null, mapDispatchToProps)(Sidebar)
