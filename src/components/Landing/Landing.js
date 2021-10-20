@@ -5,15 +5,16 @@ import Navbar from "../Navbar/Navbar"
 import WStandings from "../../Widgets/WStandings/WStandings";
 import Standings from "../Standings/Standings";
 import "./Landing.css"
-import { nhlDataFetch, teamAndPlayerData } from "../../store/thunkCreators";
+import { nhlDataFetch, teamFetch } from "../../store/thunkCreators";
 
 const Landing = (props) => {
 
     const retrieveNhlData = async () => {
         await props.nhlDataFetch();
-        await props.teamAndPlayerData();
+        // await props.teamAndPlayerData();
+        await props.teamFetch();
     }
-    console.log(props.state)
+    console.log(`prop`, props.state)
     useEffect(() => {
         retrieveNhlData()
     }, [])
@@ -21,7 +22,7 @@ const Landing = (props) => {
         <>
             <div className="container">
                 <Navbar />
-                <Sidebar />
+                <Sidebar state={props.state} />
                 <div className="viewPort">
                     {props.state.standings && props.state.activeComponent.WStandings ? <WStandings standings={props.state.standings} /> : null}
                     {props.state.activeComponent.Standings ? <Standings standings={props.state.standings} /> : null}
@@ -36,9 +37,12 @@ const mapDispatchToProps = (dispatch) => {
         nhlDataFetch: () => {
             dispatch(nhlDataFetch());
         },
-        teamAndPlayerData: () => {
-            dispatch(teamAndPlayerData());
+        teamFetch: () => {
+            dispatch(teamFetch());
         }
+        // teamAndPlayerData: () => {
+        //     dispatch(teamAndPlayerData());
+        // }
     }
 }
 
