@@ -31,12 +31,8 @@ export const selectedTeam = (nhlTeam) => async (dispatch) => {
     try {
         const { link } = nhlTeam
         const nhlTeamRoster = await axios.get(`https://statsapi.web.nhl.com/${link}/roster`);
-        const test = await axios.get('https://statsapi.web.nhl.com/api/v1/people/8479368/stats/?stats=yearByYear')
-        console.log(`stat`, test)
-        // const playerStats = nhlTeamRoster.data.roster.map(async(playerId) => {
-        //     const playerStat = await 
-        // })
-
+        // const test = await axios.get('https://statsapi.web.nhl.com/api/v1/people/8479368/stats/?stats=yearByYear')
+        // console.log(`stat`, test)
         dispatch(selectedNhlTeam(nhlTeamRoster, nhlTeam))
     } catch (error) {
         console.error(error)
