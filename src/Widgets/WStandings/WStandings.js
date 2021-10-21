@@ -6,8 +6,6 @@ import { useState } from 'react'
 import Standings from '../../components/Standings/Standings'
 
 const WStandings = (props) => {
-
-
     // NHL data drilling
     const { standings } = props
     const { data } = standings
@@ -17,10 +15,10 @@ const WStandings = (props) => {
     const { activeComponent } = props
     const { WStandings } = activeComponent
     const { Standings } = activeComponent
-    console.log(`my props`, activeComponent)
+
 
     const renderFullStats = () => {
-        props.toggleComponents({ WStandings: !WStandings, Standings: !Standings })
+        props.toggleComponents({ Standings: !Standings })
     }
 
     return (
