@@ -4,18 +4,15 @@ import { useEffect, useState } from 'react'
 import Team from '../Team/Team'
 import { toggleComponents } from '../../store/actions'
 import { connect } from 'react-redux'
+import { selectedTeam } from '../../store/thunkCreators'
 
 const Sidebar = (props) => {
-
-    // const { teams } = props.state;
     const { activeComponent } = props.state;
-    const { Teams } = activeComponent
 
-
-    const handleTeamClick = async (teamName) => {
-        console.log(teamName)
-        await props.toggleComponents({ Teams: !Teams });
-
+    const handleTeamClick = async (nhlTeam) => {
+        console.log(nhlTeam)
+        await props.toggleComponents({ Teams: activeComponent[`Teams`] = !activeComponent['Teams'] });
+        await props.selectedTeam(nhlTeam)
     }
 
     return (
@@ -37,11 +34,13 @@ const Sidebar = (props) => {
     )
 }
 
-
 const mapDispatchToProps = (dispatch) => {
     return {
         toggleComponents: (teams) => {
             dispatch(toggleComponents(teams))
+        },
+        selectedTeam: (nhlTeam) => {
+            dispatch(selectedTeam(nhlTeam))
         }
     }
 }
