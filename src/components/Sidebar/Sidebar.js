@@ -1,7 +1,4 @@
-import axios from 'axios'
 import './Sidebar.css'
-import { useEffect, useState } from 'react'
-import Team from '../Team/Team'
 import { toggleComponents } from '../../store/actions'
 import { connect } from 'react-redux'
 import { selectedTeam } from '../../store/thunkCreators'
@@ -10,7 +7,6 @@ const Sidebar = (props) => {
     const { activeComponent } = props.state;
 
     const handleTeamClick = async (nhlTeam) => {
-        console.log(nhlTeam)
         await props.toggleComponents({ Teams: activeComponent[`Teams`] = !activeComponent['Teams'] });
         await props.selectedTeam(nhlTeam)
     }
