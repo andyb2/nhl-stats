@@ -4,13 +4,11 @@ const Standings = (props) => {
     const { standings } = props
     const { data } = standings
     const { records } = data
-    console.log(`PROPS`, props.standings.data)
 
     return (
         <div className="standingsComp">
             {records.map((teamData, idx) => {
                 return (
-                    // <div>
                     <table className="standingsTable" key={idx}>
                         <thead className="tableHeader">
                             <tr>
@@ -41,7 +39,6 @@ const Standings = (props) => {
                             })
                         }
                     </table>
-                    // </div>
                 )
             })}
         </div>
