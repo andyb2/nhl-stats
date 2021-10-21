@@ -3,10 +3,11 @@ import thunkMiddleware from "redux-thunk";
 import actions from './actions'
 
 const renderedComponents = {
-    activeComponent: {
+    activeComponent:
+    {
         WStandings: true,
         Standings: false,
-        Teams: false,
+        Teams: false
     }
 }
 
