@@ -1,25 +1,26 @@
 export const setInitialState = (state, payload) => {
-    return { ...state, standings: payload }
+    const stateCopy = { ...state }
+    return { ...stateCopy, standings: payload }
 }
 
 export const setActiveComponent = (state, payload) => {
-    // console.log(`TEMAS`, Object.keys(payload).length)
-
     const stateCopy = { ...state }
-    if (Object.keys(payload).length === 1) {
-        stateCopy.activeComponent[`${Object.keys(payload)[0]}`] = !stateCopy.activeComponent[`${Object.keys(payload)[0]}`]
-        console.log(`the payload`, state.activeComponent[`${Object.keys(payload)}`])
-        return stateCopy
-    } else {
-
-        stateCopy.activeComponent[`${Object.keys(payload)[0]}`] = !stateCopy.activeComponent[`${Object.keys(payload)[0]}`]
-        stateCopy.activeComponent[`${Object.keys(payload)[1]}`] = !stateCopy.activeComponent[`${Object.keys(payload)[1]}`]
-        // console.log(`TEST`, stateCopy.activeComponent, `payload`, stateCopy.activeComponent[`${Object.keys(payload)[1]}`])
-        return stateCopy
+    for (const property in state.activeComponent) {
+        property === Object.keys(payload).toString()
+            ? stateCopy.activeComponent[`${Object.keys(payload)}`] = Object.values(payload)[0]
+            : stateCopy.activeComponent[`${property}`] = false
     }
+    return stateCopy
 }
 
 export const setTeamData = (state, payload) => {
     const stateCopy = { ...state }
     return { ...stateCopy, teams: payload }
+}
+
+export const teamRoster = (state, payload) => {
+    const { roster } = payload.teamRoster.data
+    const { nhlTeam } = payload
+    const stateCopy = { ...state }
+    return { ...stateCopy, selectedTeam: { nhlTeam, roster } }
 }
