@@ -7,7 +7,7 @@ const Team = (props) => {
     const { selectedTeam } = props;
     const { nhlTeam } = selectedTeam
     const { teamRoster } = selectedTeam
-    console.log(`TEAM PROP`, selectedTeam)
+    console.log(`TEAM PROP`, props)
 
     const playerSelect = async (playerId) => {
         console.log(playerId)
@@ -73,7 +73,6 @@ const Team = (props) => {
                                     <td>{goalies.stats[0].splits[0].stat.games}</td>
                                     <td>{goalies.stats[0].splits[0].stat.goalAgainstAverage}</td>
                                     <td>{goalies.stats[0].splits[0].stat.savePercentage}</td>
-                                    <td>{console.log(goalies)}</td>
                                 </tr>
                             </tbody>
                         )
@@ -84,7 +83,7 @@ const Team = (props) => {
         </div>
     )
 }
-// Object.keys(players.stats[0].splits).length - 1
+
 const mapDispatchToProps = (dispatch) => {
     return {
         playerStats: (playerId) => {
