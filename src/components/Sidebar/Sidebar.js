@@ -8,7 +8,7 @@ const Sidebar = (props) => {
 
     const handleTeamClick = async (nhlTeam) => {
         if(activeComponent.Teams === false){
-        await props.toggleComponents({ Teams: activeComponent[`Teams`] = !activeComponent['Teams'] });
+            await props.toggleComponents({ Teams: activeComponent[`Teams`] = !activeComponent['Teams'] });
         }
         await props.selectedTeam(nhlTeam)
     }
