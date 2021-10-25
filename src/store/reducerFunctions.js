@@ -19,8 +19,12 @@ export const setTeamData = (state, payload) => {
 }
 
 export const teamRoster = (state, payload) => {
-    const { roster } = payload.teamRoster.data
+    const { teamRoster } = payload
     const { nhlTeam } = payload
     const stateCopy = { ...state }
-    return { ...stateCopy, selectedTeam: { nhlTeam, roster } }
+    return { ...stateCopy, selectedTeam: { nhlTeam, teamRoster } }
+}
+
+export const playerSearchedStats = (state, payload) => {
+    return { ...state, PlayerStats: payload }
 }
