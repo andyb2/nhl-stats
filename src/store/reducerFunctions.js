@@ -26,5 +26,12 @@ export const teamRoster = (state, payload) => {
 }
 
 export const playerSearchedStats = (state, payload) => {
-    return { ...state, PlayerStats: payload }
+    const stateCopy = {...state}
+    return { ...stateCopy, PlayerStats: payload }
+}
+
+export const setSchedule = (state, payload) => {
+    const {data} = payload
+    const stateCopy = {...state}
+    return {...stateCopy, schedule: data}
 }
