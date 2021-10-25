@@ -32,7 +32,7 @@ const Landing = (props) => {
                     {/* standings */}
                     {props.state.activeComponent.Standings ? <Standings standings={props.state.standings} /> : null}
                     {/* team */}
-                    {props.state.selectedTeam && props.state.activeComponent.Teams ? <Teams selectedTeam={props.state.selectedTeam} /> : null}
+                    {props.state.selectedTeam && props.state.activeComponent.Teams ? <Teams selectedTeam={props.state.selectedTeam} active={props.state.activeComponent} /> : null}
                 </div>
             </div>
         </>
