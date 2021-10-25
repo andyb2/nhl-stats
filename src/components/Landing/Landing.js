@@ -5,16 +5,18 @@ import Navbar from "../Navbar/Navbar"
 import WStandings from "../../Widgets/WStandings/WStandings";
 import Standings from "../Standings/Standings";
 import "./Landing.css"
-import { nhlDataFetch, teamFetch } from "../../store/thunkCreators";
-import Teams from "../Team/Team"
+import { nhlDataFetch, teamFetch, scheduleRequest } from "../../store/thunkCreators";
+import Teams from "../Team/Team";
+import WSchedule from "../../Widgets/WSchedule/WSchedule"
 
 const Landing = (props) => {
 
     console.log(`PROPS`, props)
-    console.log(new Date())
+    // console.log(new Date())
     const retrieveNhlData = async () => {
         await props.nhlDataFetch();
         await props.teamFetch();
+        await props.scheduleRequest();
     }
 
     useEffect(() => {
@@ -29,10 +31,13 @@ const Landing = (props) => {
                 <div className="viewPort">
                     {/* widget standings */}
                     {props.state.standings && props.state.activeComponent.WStandings ? <WStandings standings={props.state.standings} /> : null}
+                    {/* widget schedule */}
+                    {props.state.schedule && props.state.activeComponent.WSchedule ?  <WSchedule schedule={props.state.schedule}/> : null}
                     {/* standings */}
                     {props.state.activeComponent.Standings ? <Standings standings={props.state.standings} /> : null}
                     {/* team */}
-                    {props.state.selectedTeam && props.state.activeComponent.Teams ? <Teams selectedTeam={props.state.selectedTeam} active={props.state.activeComponent} /> : null}
+                    {props.state.selectedTeam && props.state.activeComponent.Teams ? <Teams selectedTeam={props.state.selectedTeam} /> : null}
+                    {/* {<Schedule scheduleDate={}/>} */}
                 </div>
             </div>
         </>
@@ -46,6 +51,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         teamFetch: () => {
             dispatch(teamFetch());
+        },
+        scheduleRequest: () => {
+            dispatch(scheduleRequest());
         }
     }
 }
