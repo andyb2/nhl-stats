@@ -1,6 +1,6 @@
 import axios from "axios";
 import PlayerStats from "../components/PlayerStats/PlayerStats";
-import { setNhlDataInitialState, teamInfo, selectedNhlTeam, playerInfo } from "./actions";
+import { setNhlDataInitialState, teamInfo, selectedNhlTeam, playerInfo, scheduleInfo } from "./actions";
 
 export const nhlDataFetch = () => async (dispatch) => {
     try {
@@ -50,6 +50,16 @@ export const playerStats = (playerId) => async (dispatch) => {
         const playerSearch = await axios.get(`https://statsapi.web.nhl.com/api/v1/people/${playerId}`);
         dispatch(playerInfo(playerSearch))
     } catch (error) {
+        console.error(error)
+    }
+}
+
+export const scheduleRequest = () => async (dispatch) => {
+    try {
+        const nhlSchedule = await axios.get('https://statsapi.web.nhl.com/api/v1/schedule');
+        console.log(`SCHED`, nhlSchedule)
+        dispatch(scheduleInfo(nhlSchedule))
+    } catch (error){
         console.error(error)
     }
 }
