@@ -1,5 +1,6 @@
 import axios from "axios";
-import { setNhlDataInitialState, teamInfo, selectedNhlTeam } from "./actions";
+import PlayerStats from "../components/PlayerStats/PlayerStats";
+import { setNhlDataInitialState, teamInfo, selectedNhlTeam, playerInfo } from "./actions";
 
 export const nhlDataFetch = () => async (dispatch) => {
     try {
@@ -30,10 +31,24 @@ export const teamFetch = () => async (dispatch) => {
 export const selectedTeam = (nhlTeam) => async (dispatch) => {
     try {
         const { link } = nhlTeam
+        const playerStatsArray = []
         const nhlTeamRoster = await axios.get(`https://statsapi.web.nhl.com/${link}/roster`);
-        // const test = await axios.get('https://statsapi.web.nhl.com/api/v1/people/8479368/stats/?stats=yearByYear')
-        // console.log(`stat`, test)
-        dispatch(selectedNhlTeam(nhlTeamRoster, nhlTeam))
+
+        for (let i = 0; i < nhlTeamRoster.data.roster.length; i += 1) {
+            const playerPoints = await axios.get(`https://statsapi.web.nhl.com/api/v1/people/${nhlTeamRoster.data.roster[i].person.id}/stats/?stats=statsSingleSeason&season=20212022`);
+            playerStatsArray.push({ name: nhlTeamRoster.data.roster[i], playerId: nhlTeamRoster.data.roster[i].person.id, stats: playerPoints.data.stats });
+            console.log(`ARRAY`, playerStatsArray)
+        }
+        dispatch(selectedNhlTeam(playerStatsArray, nhlTeam))
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+export const playerStats = (playerId) => async (dispatch) => {
+    try {
+        const playerSearch = await axios.get(`https://statsapi.web.nhl.com/api/v1/people/${playerId}`);
+        dispatch(playerInfo(playerSearch))
     } catch (error) {
         console.error(error)
     }
