@@ -4,6 +4,7 @@ import {
     setTeamData,
     teamRoster,
     playerSearchedStats,
+    setSchedule
 } from "./reducerFunctions";
 
 const SET_NHL_DATA_INITIAL_STATE = 'SET_NHL_DATA_INITIAL_STATE';
@@ -11,6 +12,7 @@ const COMPONENT_TOGGLE = 'COMPONENT_TOGGLE';
 const SET_TEAM_DATA = 'SET_TEAM_DATA';
 const SET_TEAM_ROSTER = 'SET_TEAM_ROSTER';
 const SET_PLAYER_DATA = 'SET_PLAYER_DATA';
+const SET_SCHEDULE = 'SET_SCHEDULE'
 
 export const toggleComponents = (activeComponent) => {
     return {
@@ -47,6 +49,13 @@ export const playerInfo = (stats) => {
     }
 }
 
+export const scheduleInfo = (info) => {
+    return {
+        type: SET_SCHEDULE,
+        payload: info
+    }
+}
+
 const reducer = (state = [], action) => {
     switch (action.type) {
         case SET_NHL_DATA_INITIAL_STATE:
@@ -59,6 +68,8 @@ const reducer = (state = [], action) => {
             return teamRoster(state, action.payload);
         case SET_PLAYER_DATA:
             return playerSearchedStats(state, action.payload);
+        case SET_SCHEDULE:
+            return setSchedule(state, action.payload);
         default:
             return state;
     }
