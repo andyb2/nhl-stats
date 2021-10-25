@@ -11,14 +11,14 @@ import Teams from "../Team/Team"
 const Landing = (props) => {
 
     console.log(`PROPS`, props)
-
+    console.log(new Date())
     const retrieveNhlData = async () => {
         await props.nhlDataFetch();
         await props.teamFetch();
     }
 
     useEffect(() => {
-        retrieveNhlData()
+        retrieveNhlData();
     }, [])
 
     return (
@@ -27,8 +27,11 @@ const Landing = (props) => {
                 <Navbar />
                 <Sidebar state={props.state} />
                 <div className="viewPort">
+                    {/* widget standings */}
                     {props.state.standings && props.state.activeComponent.WStandings ? <WStandings standings={props.state.standings} /> : null}
+                    {/* standings */}
                     {props.state.activeComponent.Standings ? <Standings standings={props.state.standings} /> : null}
+                    {/* team */}
                     {props.state.selectedTeam && props.state.activeComponent.Teams ? <Teams selectedTeam={props.state.selectedTeam} /> : null}
                 </div>
             </div>
